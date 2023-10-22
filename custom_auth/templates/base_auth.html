@@ -1,0 +1,42 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta data-rh="true" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0">
+  <!-- CSS -->
+  {% block css %}
+  {% endblock %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/base.css'%}">
+  
+  <!-- JS -->
+  {% block js %}
+  {% endblock %}
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  
+  <link rel="shortcut icon" href="{% static 'img/house.png'%}" />
+  <title>{% block title%}{% endblock %} | AppName</title>
+</head>
+
+<body>
+
+    <nav class="mx-auto">
+        <div class="flex justify-center items-center border border-gray-200 bg-white/70 rounded-xl backdrop-blur-sm z-50 p-3">
+
+            <!--AppName-->
+            <div class="flex justify-center items-center">
+                <a href="{% url "landing_page" %}">AppName</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <main id="content" class="space-y-20">
+    {% block content %}
+    {% endblock content %}
+    </main>
+
+</body>
+</html> 
